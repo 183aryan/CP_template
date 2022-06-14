@@ -1,0 +1,139 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+#define vi vector<int>
+#define vll vector<ll>
+#define vvll vector<vector<ll>>
+#define vpll vector<pair<ll, ll>>
+#define mll map<ll, ll>
+#define pll pair<ll, ll>
+// #define for(i,n) for(ll i=0;i<n;i++)
+#define fore(i,n) for(ll i=0;i<=n;i++)
+#define R return
+#define Mod 1000000007
+#define mod 998244353
+#define PI 3.141592653589793238462
+#define loop(var1,start,end) for(var1=start;var1<end;var1++)
+// ascii of a=97
+// ascii of z=122
+// ascii of A=65
+// ascii of Z=90
+// ascii of 0=48
+//Calculate Factorial of no.
+ll fact(ll n){
+    ll ans=1;
+    while(n--){
+        ans*=(n+1);
+        ans%=mod;
+    }
+    R ans;
+}
+//Check whether the no. is prime or not.
+bool isprime(ll n){
+    ll i;
+    if(n<=1) R false;
+    if(n==2) R true;
+    if(!(n&1)) R false;
+    for(i=3;i*i<=n;i+=2)
+        if(n%i==0) R false;
+    R true;
+}
+//Overload Comparator Function.
+bool comparator(ll u,ll v){
+    R u>v;
+}
+//Function to convert binary to decimal.
+ll decimal(string s){
+    reverse(s.begin(),s.end());
+    ll ans=0,i=1,j=0;
+    while(j<s.size()){
+        if(s[j]=='1'){
+            ans+=i;
+        }
+        i*=2;
+        j++;
+    }
+    R ans;
+}
+//Function to Conert Decimal no. to binary no.
+string binary(ll n){
+    string temp;
+    if(n==0) R "0";
+    while(n){
+        temp+=to_string(n%2);
+        n/=2;
+    }
+    // reverse(temp.begin(),temp.end());
+    R temp;
+}
+//Execution of function to count no. of digits.
+ll countdigits(ll n){
+    ll i,ans=0;
+    i=n;
+    while(i){
+        ans++;
+        i/=10;
+    }
+    R ans;
+}
+//Function to find n^k
+ll power(ll x,ll y)
+{
+    if (y == 0)
+        R 1;
+    ll p=power(x,y/2);
+    if (y % 2 == 0)
+        R (p%Mod * p)%Mod;
+    else
+        R (x * p%Mod * p)%Mod;
+}
+//Function to calculate modulo inversion.
+ll modulo_inverse(ll n){  
+    R power(n,Mod-2);
+}
+//Function to calculate factorial.
+ll factorial(ll n){
+    vll fact(n+1);
+    fact[0]=1;
+    ll i;
+    loop(i,1,n+1){
+        fact[i]=(fact[i-1]*i)%Mod;
+    }
+    R fact[n];
+}   
+/// Palindrome Check///
+inline bool string_palindrome(string &s)
+{
+	return std::equal(s.begin(), s.end(), s.rbegin());
+}
+inline bool palindrome(vector<int> v)
+{
+	ll n = v.size();
+	for (ll i = 0; i < n; i++)
+	{
+		if (v[i] != v[n - i - 1])
+			return false;
+	}
+	return true;
+}
+bool isPowerOfTwo(int n)
+{
+	if (n == 0)
+		return false;
+ 
+	return (ceil(log2(n)) == floor(log2(n)));
+}
+void solve()
+{
+    
+}
+
+int main()
+{
+    ll t,q;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+}
